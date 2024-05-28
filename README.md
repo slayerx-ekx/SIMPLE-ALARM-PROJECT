@@ -1,7 +1,7 @@
 # SIMPLE-ALARM-PROJECT
 This is a simple alarm made with python , just for fun
 
-![Purple and Yellow Japanese Landscape Twitch Banner](https://github.com/slayerx-ekx/SIMPLE-ALARM-PROJECT/assets/155826497/e3f15723-14db-44be-b8df-4d352e6af186)
+![Purple and Yellow Japanese Landscape Twitch Banner (1)](https://github.com/slayerx-ekx/SIMPLE-ALARM-PROJECT/assets/155826497/8d392ed7-9713-441b-94a6-1c7ee828f7f3)
 
 
 <!-- HTML -->
