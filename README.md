@@ -1,25 +1,10 @@
 # SIMPLE-ALARM-PROJECT
 This is a simple alarm made with python , just for fun
 
-I can't speaking bahasa inggris "hahahahah"
+![Purple and Yellow Japanese Landscape Twitch Banner](https://github.com/slayerx-ekx/SIMPLE-ALARM-PROJECT/assets/155826497/e3f15723-14db-44be-b8df-4d352e6af186)
 
-const aboutMe = {
-   pronouns: "he" | "him",
-   code: [Javascript, Typescript, HTML, CSS, Python, Java, CSharp, Kotlin, Swift],
-   technologies: {
-      frontEnd: {
-         js: ["React", "Angular"],
-         css: ["Materialize", "Bulma", "Bootstrap", "Material Design", "Semantic UI"]
-      },
-      backEnd: {
-         java: ["Spring"],
-         js: ["Node", "Express"],
-         csharp: ["Asp.net Core"],
-         misc: ["Bash", "Puppeteer", "Selenium", "Cypress"]
-      },
-      databases: ["MongoDB", "mySQL", "SQLServer"],
-      mobile: ["Android", "IOS"]
-   },
-   currentOccupation: ["last year student, open for job opportunities"],
-   challenge: "I'm working towards being able to run a marathon.",
-};
+
+<!-- HTML -->
+<img src="https://readme-jokes.vercel.app/api" alt="Jokes Card" />
+
+![](https://komarev.com/ghpvc/?username=slayerx-ekx)
