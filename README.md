@@ -21,18 +21,18 @@ This is a simple alarm made with python , just for fun
 
 
 # HOW TO RUN
-## Download Using Zip  available on GitHub
+## Download Using Zip  Available On GitHub
 
-## Or you can download using terminal
+## Or You Can Download Using Terminal
 
     git-clone https://github.com/slayerx-ekx/SIMPLE-ALARM-PROJECT
 
 
-## run final.py using vscode or other application
+## Run final.py Using VSCode Or Other Application
 
 # Contact
 
 ## Email
-    dettlessgo@gmail.com
+    dettlessgo123@gmail.com
 
 ![](https://komarev.com/ghpvc/?username=slayerx-ekx)
