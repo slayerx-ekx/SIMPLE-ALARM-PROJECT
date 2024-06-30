@@ -7,7 +7,4 @@ This is a simple alarm made with python , just for fun
 # HOW TO RUN
 -run final.py using vscode or other application
 
-<!-- HTML -->
-<img src="https://readme-jokes.vercel.app/api" alt="Jokes Card" />
-
 ![](https://komarev.com/ghpvc/?username=slayerx-ekx)
