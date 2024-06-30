@@ -22,7 +22,7 @@ class Alarm(QWidget):
         self.canvas_label = QLabel(self)
         self.canvas_label.setFixedSize(200, 200)
         self.layout.addWidget(self.canvas_label)
-        self.canvas_label.setAlignment(Qt.AlignCenter)  # Mengatur widget di tengah
+        self.canvas_label.setAlignment(Qt.AlignCenter) 
         self.layout.addWidget(self.canvas_label, alignment=Qt.AlignCenter)
 
         # Label untuk menampilkan waktu Indonesia Barat
@@ -31,7 +31,7 @@ class Alarm(QWidget):
         self.layout.addWidget(self.time_label)
 
         set_alarm_label = QLabel("Set Alarm (JAM : MENIT)", self)
-        set_alarm_label.setFont(QFont("Arial", 20))  # Menetapkan jenis font dan ukuran
+        set_alarm_label.setFont(QFont("Arial", 20))  
         set_alarm_label.setAlignment(Qt.AlignCenter)
         self.layout.addWidget(set_alarm_label)
         self.entry = QLineEdit(self)
@@ -65,14 +65,11 @@ class Alarm(QWidget):
         #self.show()
 
     def update_time(self):
-        # Mendapatkan waktu saat ini di timezone Asia/Jakarta
         tz = pytz.timezone('Asia/Jakarta')
         current_time = datetime.now(tz)
 
-        # Menampilkan waktu Indonesia Barat
         self.time_label.setText(current_time.strftime("%H:%M:%S %p"))
 
-        # Menggambar jarum jam
         self.draw_clock(current_time)
 
     def draw_clock(self, current_time):
@@ -84,7 +81,7 @@ class Alarm(QWidget):
 
         # Menggambar lingkaran jam di tengah window
         center = pixmap.rect().center()
-        radius = min(center.x(), center.y()) - 10  # Radius lingkaran agar tidak melebihi batas pixmap
+        radius = min(center.x(), center.y()) - 10 
         painter.setPen(QPen(Qt.black, 2, Qt.SolidLine))
         painter.drawEllipse(center, radius, radius)
 
@@ -92,8 +89,8 @@ class Alarm(QWidget):
         painter.setFont(QFont("Helvetica", 12))
         for hour in range(1, 13):
             angle = math.radians(30 * hour - 90)
-            x = center.x() + 0.8 * radius * math.cos(angle) - 6  # Koreksi posisi untuk penulisan teks
-            y = center.y() + 0.8 * radius * math.sin(angle) + 6  # Koreksi posisi untuk penulisan teks
+            x = center.x() + 0.8 * radius * math.cos(angle) - 6  
+            y = center.y() + 0.8 * radius * math.sin(angle) + 6 
             painter.drawText(int(x), int(y), str(hour))
 
         # Menggambar jarum jam di tengah lingkaran
@@ -118,15 +115,13 @@ class Alarm(QWidget):
 
         try:
             alarm_hour, alarm_minute = map(int, alarm_time_str.split(':'))
-
-            # Mengonversi ke timezone Indonesia Barat
             tz = pytz.timezone('Asia/Jakarta')
             current_time = datetime.now(tz)
             alarm_time = current_time.replace(hour=alarm_hour, minute=alarm_minute, second=0, microsecond=0)
 
             # Memeriksa apakah alarm diatur pada waktu yang sudah berlalu
             if alarm_time < current_time:
-                alarm_time += timedelta(days=1)  # Menambahkan satu hari jika alarm sudah berlalu
+                alarm_time += timedelta(days=1) 
 
             # Hitung selisih waktu antara alarm dan waktu sekarang
             delta = alarm_time - current_time
@@ -141,7 +136,6 @@ class Alarm(QWidget):
 
     def ring_alarm(self):
         #QMessageBox.information(self, "Alarm", "Wake up!")
-        # Memilih file musik berdasarkan pilihan dari ComboBox
         selected_sound = self.sound_combo.currentText()
         if selected_sound == "Sound 1":
             sound_file = "sound/sound1.mp3"            
@@ -153,7 +147,6 @@ class Alarm(QWidget):
             sound_file = "sound/sound4.mp3"
         else:
             sound_file = "sound/sound5.mp3"
-        # Memainkan suara alarm dari file MP3
         pygame.mixer.init()
         pygame.mixer.music.load(sound_file)
         pygame.mixer.music.play()
@@ -239,9 +232,9 @@ class Application(QMainWindow):
 
         # GIF WALPAPER
         self.background_label = QLabel(self)
-        self.background_label.setGeometry(0, 0, 800, 600)  # Sesuaikan dengan ukuran jendela Anda
-        self.background_label.setAttribute(Qt.WA_TranslucentBackground)  # Membuat latar belakang jendela menjadi transparan
-        movie = QMovie("image/final-gif.gif")  # Ganti 'background.gif' dengan path ke gambar GIF Anda
+        self.background_label.setGeometry(0, 0, 800, 600) 
+        self.background_label.setAttribute(Qt.WA_TranslucentBackground) 
+        movie = QMovie("image/final-gif.gif")  
         self.background_label.setMovie(movie)
         movie.start()
 
@@ -274,7 +267,6 @@ class Application(QMainWindow):
         self.setup_home_tab()
 
     def setup_home_tab(self):
-        # Home tab content
         self.logo(self.home_layout)
         self.garis_pemisah1(self.home_layout)
         self.waktu_layer1(self.home_layout)
@@ -286,8 +278,8 @@ class Application(QMainWindow):
     def logo(self, layout):
         foto_ori = Image.open('image/logo1.png')
         ukuran_foto = foto_ori.resize((490, 160), Image.Resampling.LANCZOS)
-        ukuran_foto.save("image/logo_resized.png")  # Saving resized image
-        self.mylogo = QPixmap("image/logo_resized.png")  # Loading the resized image
+        ukuran_foto.save("image/logo_resized.png") 
+        self.mylogo = QPixmap("image/logo_resized.png")
         self.image_label = QLabel()
         self.image_label.setPixmap(self.mylogo)
         self.image_label.setAlignment(Qt.AlignCenter)
@@ -328,19 +320,17 @@ class Application(QMainWindow):
         QTimer.singleShot(1000, self.update_time)
 
     def create_exit_button(self):
-        exit_button = QPushButton(">>> KELUAR 😊 APLIKASI << ", self)
+        exit_button = QPushButton("EXIT", self)
         exit_button.clicked.connect(self.close_application)
         exit_button.setStyleSheet("QPushButton {"
-                        "border-radius: 10px;"
-                        "background-color: white;"
                         "color: black;"
-                        "font-family: Arial;"
-                        "font-size: 30px;"
+                        "font-family:Arial;"
+                        "font-size: 20px;"
                         "}"
                         "QPushButton:hover {"
                         "color: red;"
                         "}")
-        self.home_layout.addWidget(exit_button, alignment=Qt.AlignCenter)
+        self.home_layout.addWidget(exit_button, alignment=Qt.AlignBottom | Qt.AlignLeft)
 
     def close_application(self):
         self.close()
