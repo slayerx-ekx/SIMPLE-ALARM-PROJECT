@@ -21,6 +21,17 @@ This is a simple alarm made with python , just for fun
 
 
 # HOW TO RUN
+
+## Required
+    sys
+    time
+    PyQt5
+    math
+    pytz
+    datetime
+    pygame
+    PIL
+
 ## Download Using Zip  Available On GitHub
 
 ## Or You Can Download Using Terminal
