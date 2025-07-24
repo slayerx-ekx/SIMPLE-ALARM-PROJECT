@@ -44,6 +44,6 @@ This is a simple alarm made with python , just for fun
 # Contact
 
 ## Email
-    ekamohammad80@gmail.com
+    moekaprasetyo@gmail.com
 
 ![](https://komarev.com/ghpvc/?username=slayerx-ekx)
